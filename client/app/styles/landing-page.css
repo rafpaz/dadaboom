@@ -2,8 +2,23 @@ html{
 	font-size: 20px;
 }
 
+#landing-kids{
+	overflow: hidden;
+}
+
 body{
 	font-family: "Open Sans Hebrew";
+}
+
+.direction-ltr{
+	direction: ltr;
+}
+
+#middle{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
 }
 
 .lpk-img-responsive{
@@ -18,7 +33,6 @@ body{
 }
 
 #header-text{
-	margin-top: 27px;
 	font-size: 1.7rem;
 }
 
@@ -38,7 +52,7 @@ body{
 }
 
 #drum-school{
-	margin-top: 10px;
+	margin-top: 6px;
 	font-size: 1.4rem;
 	font-weight: 600;
 }
@@ -50,7 +64,7 @@ body{
 #form-container{
 	text-align: center;
 	font-family: "Open Sans Hebrew";
-	margin: 25px 60px;
+	margin: 10px 60px;
 	border-radius: 12px;
 }
 
@@ -83,6 +97,7 @@ body{
 	font-weight: 600;
 	width: 100%;
 	margin: 24px 0px;
+	outline: none;
 }
 
 .form-input-text-size{
@@ -124,7 +139,7 @@ body{
 }
 
 #icons img {
-	max-width: 50px;
+	max-width: 36px;
 	margin: 0 auto;
 }
 
