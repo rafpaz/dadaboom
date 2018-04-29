@@ -10,7 +10,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack -p --progress --profile --colors && node server",
+    "build": "webpack -p",
+    "start": "node server",
     "start:dev": "node server"
   },
   "dependencies": {
