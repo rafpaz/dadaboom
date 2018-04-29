@@ -1,0 +1,195 @@
+html{
+	font-size: 20px;
+}
+
+#landing-kids{
+	overflow: hidden;
+}
+
+body{
+	font-family: "Open Sans Hebrew";
+}
+
+.direction-ltr{
+	direction: ltr;
+}
+
+#middle{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.lpk-img-responsive{
+	display: block;
+	max-width: 100%;
+	height: 100vh;
+}
+
+#text-and-from{
+	background-color: #b94a48;
+	height: 100vh;
+}
+
+#header-text{
+	font-size: 1.7rem;
+}
+
+#header-text,#form{
+	direction: rtl;
+	font-family: "Open Sans Hebrew";
+}
+
+#mom-dad{
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+#did-u-know div{
+	font-size: 1.1rem;
+	font-weight: 800;
+}
+
+#drum-school{
+	margin-top: 6px;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+#form-container{
+	text-align: center;
+	font-family: "Open Sans Hebrew";
+	margin: 10px 60px;
+	border-radius: 12px;
+}
+
+#form-header{
+	font-size: 1.4rem;
+	line-height: 31px;
+	margin-top: 16px;
+}
+
+.white-header{
+	color: white;
+	font-family: "Open Sans Hebrew";
+}
+
+#icons{
+	margin-top: 15px;
+}
+
+#empty-bottom{
+	background-color: white;
+}
+
+.center-img{
+	margin: 0 auto;
+}
+
+#submit{
+	background-color: #ffdd33;
+	font-size: 1rem;
+	font-weight: 600;
+	width: 100%;
+	margin: 24px 0px;
+	outline: none;
+	border-width: 1px;
+}
+
+.form-input-text-size{
+	font-size: 1rem;
+}
+
+.lpk-main-color{
+	color: #763d5d;
+}
+
+.lpk-main-bg-color{
+	background-color: #763d5d;
+}
+
+#form-number{
+	font-size: 2.3rem;
+	font-weight: 800;
+}
+
+#form-details{
+	font-size: 1.3rem;
+	font-weight: 200;
+}
+
+.lpk-loader {
+	border: 10px solid #f3f3f3; /* Light grey */
+	border-top: 10px solid #763d5d; /* Blue */
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	animation: spin 1s linear infinite;
+	margin: 5px auto;
+}
+
+#lpk-modal p{
+	text-align: center;
+	direction: rtl;
+	font-size: 1rem;
+}
+
+#icons img {
+	max-width: 36px;
+	margin: 0 auto;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+    width: 85%;
+    display: block;
+}
+
+#icons span{
+	font-size: 0.72rem;
+}
+
+.thin-margin{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@media(max-width: 1724px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media(max-width: 1382px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+@media(max-height: 824px){
+	html {
+		font-size: 12px;
+	}
+}
+
+@media(max-width: 1200px){
+	html {
+		font-size: 17px;
+	}
+	#form-container{
+		margin: 20px;
+	}
+}
+
+@media(max-width: 1024px) {
+	html {
+		font-size: 13px;
+	}
+}

@@ -1,53 +1,119 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import styles from './LP.css';
+import {Image, Transformation} from "cloudinary-react";
+import LPForm from "./LPForm";
+import LPModal from "./LPModal";
+import {isMobile} from "react-device-detect";
+import {Redirect} from 'react-router';
 
 class LandingPage extends Component {
-	render() {
+	constructor(props) {
+		super(props);
+		this.state = {
+			showModal: false,
+			redirect: false
+		};
+		this.afterSubmit = this.afterSubmit.bind(this);
+	}
+
+	afterSubmit() {
+		this.setState({ showModal: true });
+		setTimeout(
+			function() {
+				this.setState({ redirect: true });
+			}.bind(this),
+			3000
+		);
+	}
+
+	page() {
+		return isMobile ? this.mobilePage() : this.desktopPage();
+	}
+
+	desktopPage() {
 		return (
-			<div id={"form"} className="row lpk-main-color">
-				<div id={"form-container"} className={"container lpk-main-bg-color"}>
-					<div id="form-header" className={"white-header"}>
-						<div>
-							להזמנת שיעור תופים<br/>
-							אצל צפריר
-							<b> חייגו עכשיו</b>
+			<div id={"background"}>
+				<div className="container-fluid">
+					<div className="col-md-2" />
+					<div className="col-md-3">
+						<div id={"lp-header-container"}>
+							<Image
+								id={"lp-header-img"}
+								cloudName="dadaboom"
+								publicId="logo_yellow.png"
+								className={"img-responsive"}
+							/>
 						</div>
-					</div>
-					<div id="form-number" className={"white-header"}>
-						054-7883383
-					</div>
-					<div id="form-details" className={"white-header"}>
-						או השאירו פרטים:
-					</div>
-					<form onSubmit={this.handleSubmit}>
-						<div className="form-group">
-							<input type="text" id="name" name="name" required
-								   className="form-control form-input text-center form-input-text-size"
-								   onChange={this.handleInputChange} value={this.state.name}
-								   placeholder="שם מלא"/>
+						<div className={"lp-text text-center"}>
+							<div id={"lp-dream"}>גם לך יש חלום ילדות</div>
+							<div id={"lp-drums"}>לנגן בתופים?</div>
+							<div id={"lp-school"}>
+								בבית הספר לתופים של צפריר ליכטנשטיין מגשימים לך
+								חלום ובגדול!
+							</div>
 						</div>
-						<div className="form-group input-margin-top" style={{marginBottom: 0}}>
-							<input type="text"
-								   className="form-control form-input text-center form-input-text-size direction-ltr"
-								   name="phone" placeholder="טלפון" onChange={this.handleInputChange}
-								   value={this.state.phone} required/>
-						</div>
-						<button id="submit" type="submit" className={"lpk-main-color"}>
-							{!this.state.loading && <div id="submit-text">
-								<div>
-									כן, גם אני רוצה
-								</div>
-								<div>
-									לשפר את היכולות של
-									ילדי
-								</div>
-							</div>}
-							{this.state.loading && <div className="lpk-loader"/>}
-						</button>
-					</form>
+						<LPForm
+							afterSubmit={this.afterSubmit}
+							backgroundClass={"lp-form-background"}
+							textClass={"black-header"}
+							buttonText1={"כן, גם אני רוצה"}
+							buttonText2={"להגשים חלום אצל צפריר"}
+							source={"Landing Page Adults"}
+						/>
+					</div>
+					<div className="col-md-7" />
+					<LPModal showModal={this.state.showModal} />
 				</div>
 			</div>
 		);
+	}
+
+	mobilePage() {
+		return (
+			<div id={"mobile-background"} className={"lp-main-bg-color"}>
+				<div className="container-fluid">
+					<div className="col-md-2" />
+					<div className="col-md-3">
+						<Image
+							id={"lp-header-img"}
+							cloudName="dadaboom"
+							publicId="logo_yellow.png"
+							className={"img-responsive"}
+						/>
+						<div className={"lp-text text-center"}>
+							<div id={"lp-dream"}>גם לך יש חלום ילדות</div>
+							<div id={"lp-drums"}>לנגן בתופים?</div>
+							<div id={"lp-school"}>
+								בבית הספר לתופים של צפריר ליכטנשטיין מגשימים לך
+								חלום ובגדול!
+							</div>
+						</div>
+						<LPForm
+							afterSubmit={this.afterSubmit}
+							backgroundClass={"lp-form-background"}
+							textClass={"black-header"}
+							buttonText1={"כן, גם אני רוצה"}
+							buttonText2={"להגשים חלום אצל צפריר"}
+							source={"Landing Page Adults"}
+						/>
+					</div>
+					<div className="col-md-7">
+						<Image publicId="Cover/5.jpg"
+							   cloudName="dadaboom"
+							   className={"img-responsive"}>
+							<Transformation quality="auto:good" />
+						</Image>
+					</div>
+					<LPModal showModal={this.state.showModal} />
+				</div>
+			</div>
+		);
+	}
+
+
+	render() {
+		return !this.state.redirect ? this.page() : <Redirect to={"/"} />;
 	}
 }
 

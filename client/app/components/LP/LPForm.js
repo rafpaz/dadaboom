@@ -28,7 +28,7 @@ class LPForm extends Component {
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({name: this.state.name, phone: this.state.phone, source: "Landing Page Kids"})
+			body: JSON.stringify({name: this.state.name, phone: this.state.phone, source: this.props.source})
 		})
 			.then(res => res.json())
 			.then(json => {
@@ -40,19 +40,19 @@ class LPForm extends Component {
 
 	render() {
 		return (
-			<div id={"form"} className="row lpk-main-color">
-				<div id={"form-container"} className={"container lpk-main-bg-color"}>
-					<div id="form-header" className={"white-header"}>
+			<div id={"form"} className={"row"}>
+				<div id={"form-container"} className={"container " + this.props.backgroundClass}>
+					<div id="form-header" className={this.props.textClass}>
 						<div>
 							להזמנת שיעור תופים<br/>
 							אצל צפריר
 							<b> חייגו עכשיו</b>
 						</div>
 					</div>
-					<div id="form-number" className={"white-header"}>
+					<div id="form-number" className={this.props.textClass}>
 						054-7883383
 					</div>
-					<div id="form-details" className={"white-header"}>
+					<div id="form-details" className={this.props.textClass}>
 						או השאירו פרטים:
 					</div>
 					<form onSubmit={this.handleSubmit}>
@@ -70,13 +70,8 @@ class LPForm extends Component {
 						</div>
 						<button id="submit" type="submit" className={"lpk-main-color"}>
 							{!this.state.loading && <div id="submit-text">
-								<div>
-									כן, גם אני רוצה
-								</div>
-								<div>
-									לשפר את היכולות של
-									ילדי
-								</div>
+								<div>{this.props.buttonText1}</div>
+								<div>{this.props.buttonText2}</div>
 							</div>}
 							{this.state.loading && <div className="lpk-loader"/>}
 						</button>
@@ -87,7 +82,14 @@ class LPForm extends Component {
 	}
 }
 
-LPForm.propTypes = {};
+LPForm.propTypes = {
+	buttonText1: PropTypes.string,
+	buttonText2: PropTypes.string,
+	backgroundClass: PropTypes.string,
+	textClass: PropTypes.string,
+	afterSubmit: PropTypes.func,
+	source: PropTypes.string
+};
 
 export default LPForm;
 

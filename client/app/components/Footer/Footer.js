@@ -6,7 +6,7 @@ const Footer = () => (
 			<div className="row">
 				<div className="col-md-12">
 					<div className="footer-text text-center">
-						<p className="wow fadeInUp" data-wow-delay="0.4s">Dadaboom © Copyright 2017 All Right Reserved.</p>
+						<p className="wow fadeInUp" data-wow-delay="0.4s">Rafael Paz © Copyright 2017 All Right Reserved.</p>
 					</div>
 				</div>
 			</div>

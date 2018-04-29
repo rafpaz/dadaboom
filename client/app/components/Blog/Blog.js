@@ -39,7 +39,6 @@ class Blog extends Component {
 						/>
 					</div>
 				</div>
-				{/* end container */}
 			</section>
 		);
 	}

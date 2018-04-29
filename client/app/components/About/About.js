@@ -28,7 +28,7 @@ const About = () => (
 								className="wow fadeInUp text-right"
 								data-wow-delay="0.2s"
 							>
-								צקפריר ליכטנשטיין
+								צפריר ליכטנשטיין
 							</h3>
 							<p className={"text-right"}>
 								מתופף מקצועי, בעל למעלה מ-20 שנות נסיון בלימוד

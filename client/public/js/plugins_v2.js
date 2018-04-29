@@ -1,16 +1,16 @@
 let plugins = {};
 
 plugins.preloader = function(action){
-	if(action == "POP"){
-		$(window).on('load', function() {
-			handlePreloader();
-		});
-	}
-	else {
+	// if(action == "POP"){
+		// $(window).on('load', function() {
+			// handlePreloader();
+		// });
+	// }
+	// else {
 		$(document).ready(function () {
 			handlePreloader();
 		});
-	}
+	// }
 };
 
 function handlePreloader(){

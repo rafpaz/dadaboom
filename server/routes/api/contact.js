@@ -5,7 +5,7 @@ const mailProperties = {
 	user: 'dadaboommail@gmail.com',
 	pass: 'Dadaboom123'
 };
-const mailTo = "refaelypaz@gmail.com";
+const mailTo = "boomtah@gmail.com";
 
 module.exports = (app) => {
 	app.get('/api/contactus', (req, res, next) => {

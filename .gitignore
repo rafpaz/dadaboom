@@ -18,5 +18,8 @@ $RECYCLE.BIN/
 .DS_Store
 .Spotlight-V100
 .Trashes
+.idea/
 .idea
 .vscode/
+.vscode
+dadaboom.iml

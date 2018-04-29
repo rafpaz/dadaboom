@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class LPIcons extends Component {
 	render() {
 		return (
-			<div className="col-xs-4">
+			<div className="col-xs-4 thin-margin">
 				<img src={"https://res.cloudinary.com/dadaboom/image/upload/" + this.props.url}
 					 className="img-responsive"/>
 				<div className="text-center">

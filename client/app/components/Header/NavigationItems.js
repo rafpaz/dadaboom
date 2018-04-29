@@ -21,10 +21,20 @@ class NavigationItems extends Component {
 		this.state = { navArray };
 	}
 
+	onItemClick(){
+		$('#navbar-mobile').collapse('hide');
+	}
+
 	render() {
 		const items = this.state.navArray.map((item) => {
 				return <li key={item.target}>
-							<a href={"#"+ item.target} className="section-link" data-target={"\"" + item.target + "\""}>{item.name}</a>
+							<a onClick={this.onItemClick}
+							   href={"#"+ item.target}
+							   className="section-link"
+							   data-target={"\"" + item.target + "\""}>
+								{item.name}
+							</a>
+
 						</li>;
 			});
 		return (

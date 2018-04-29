@@ -38,7 +38,7 @@ class Contact extends Component {
 				email: this.state.email,
 				phone: this.state.phone,
 				message: this.state.message,
-				source: "Homepage"
+				source: this.props.source
 			})
 		}).then(res => res.json())
 			.then(json => {
@@ -155,7 +155,8 @@ Contact.propTypes = {
 	email: PropTypes.string,
 	message: PropTypes.string,
 	formMessageClass: PropTypes.string,
-	formMessageText: PropTypes.string
+	formMessageText: PropTypes.string,
+	source: PropTypes.string
 };
 
 export default Contact;

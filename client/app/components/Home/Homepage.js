@@ -15,10 +15,9 @@ import $ from "jquery";
 class Homepage extends Component{
 	constructor(props){
 		super(props);
-		console.log("constructor!");
 	}
 	componentDidMount(){
-		var that = this;
+		let that = this;
 		$(document).ready(function () {
 			plugins.smothScrolling();
 			plugins.navBarScrolling();
@@ -41,7 +40,9 @@ class Homepage extends Component{
 				<Portfolio />
 				<Testimonials />
 				<Blog />
-				<Contact />
+				<Contact
+					source={"Homepage"}
+				/>
 				<Footer />
 			</div>
 		);
