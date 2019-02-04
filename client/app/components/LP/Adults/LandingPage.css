@@ -1,0 +1,57 @@
+#background{
+	background-image: url(https://res.cloudinary.com/dadaboom/image/upload/q_auto/v1521616784/Cover/2.jpg);
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+}
+
+.lp-main-bg-color{
+	background-color: #763d5d;
+}
+
+.lp-text{
+	direction: rtl;
+	color: white;
+	font-family: 'Open Sans Hebrew', sans-serif;
+}
+
+#lp-dream{
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+
+#lp-drums{
+	font-size: 2.8rem;
+	font-weight: bold;
+}
+
+#lp-school{
+	font-size: 1.4rem;
+	width: 70%;
+	margin: 10px auto ;
+	font-weight: bold;
+}
+
+#lp-header-img{
+	max-width: 80%;
+	margin: 10% auto 5% auto;
+}
+
+.lp-form-background{
+	background-color: white;
+}
+
+.black-header{
+	color: #000000d1;
+}
+
+#mobile-background{
+	background-color: black;
+}
+
+#mobile-background #lp-header-img{
+	margin: 5%;
+	max-width: none;
+	width: 100%;
+}

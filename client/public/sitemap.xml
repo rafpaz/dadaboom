@@ -1,0 +1,27 @@
+<!--
+Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://dadaboom.co.il/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+    <url>
+    <loc>https://dadaboom.co.il/school</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://dadaboom.co.il/landing</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://dadaboom.co.il/blog/music-teaching</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>
+<!--
+<guid value="707520ae-7e28-4e62-94f2-cc77c6d1e5e4" />
+-->
+<!--
+Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator
+-->

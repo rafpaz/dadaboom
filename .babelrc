@@ -1,6 +1,13 @@
 {
+  "plugins": [
+    "transform-object-rest-spread",
+    "syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "transform-es2015-arrow-functions",
+		"babel-plugin-styled-components"
+  ],
   "presets": [
-    "es2015",
-    "react"
-  ]
+    "@babel/preset-env",
+    "@babel/preset-react"
+	]
 }

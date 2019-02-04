@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /console
+Disallow: /postConsole/
+sitemap: https://dadaboom.co.il/sitemap.xml
+HOST: dadaboom.co.il

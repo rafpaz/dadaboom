@@ -1,31 +1,33 @@
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const helpers = require('./helpers');
 
-const NODE_ENV = process.env.NODE_ENV;
+const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === 'production';
 
 module.exports = {
   entry: {
-    'app': [
-      helpers.root('client/app/index.js')
-    ]
+    app: [
+      'babel-polyfill',
+      helpers.root('client/app/index.jsx'),
+    ],
   },
 
   output: {
     path: helpers.root('dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
 
   resolve: {
-    extensions: ['.js', '.json', '.css', '.scss', '.html'],
+    extensions: ['.js', '.jsx', '.json', '.css', '.scss', '.html'],
     alias: {
-      'app': 'client/app'
-    }
+      app: 'client/app',
+      'styled-components': `${helpers.root()}/node_modules/styled-components`,
+    },
   },
 
   module: {
@@ -34,38 +36,19 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: helpers.root('client'),
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
 
       // SCSS files
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                'sourceMap': true,
-                'importLoaders': 1
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [
-                  autoprefixer
-                ]
-              }
-            },
-            'sass-loader'
-          ]
-        })
-      }, {
-			test:/\.css$/,
-			use:['style-loader','css-loader']
-		}
-	]
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          !isProd ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
   },
 
   plugins: [
@@ -75,22 +58,27 @@ module.exports = {
 
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(NODE_ENV)
-      }
+        NODE_ENV: JSON.stringify(NODE_ENV),
+      },
     }),
 
     new HtmlWebpackPlugin({
       template: helpers.root('client/public/index.html'),
-      inject: 'body'
+      inject: 'body',
     }),
 
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'css/[name].[hash].css',
-      disable: !isProd
+      disable: !isProd,
     }),
 
     new CopyWebpackPlugin([{
-      from: helpers.root('client/public')
-    }])
-  ]
+      from: helpers.root('client/public'),
+    }]),
+    new ProgressBarPlugin({
+      format: 'Build [:bar] :percent (:elapsed seconds)',
+      clear: false,
+    }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+  ],
 };

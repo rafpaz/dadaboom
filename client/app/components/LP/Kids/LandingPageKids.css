@@ -1,0 +1,102 @@
+#landing-kids{
+	overflow: hidden;
+}
+
+body{
+	font-family: "Open Sans Hebrew";
+}
+
+.direction-ltr{
+	direction: ltr;
+}
+
+#middle{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.lpk-img-responsive{
+	display: block;
+	max-width: 100%;
+	height: 100vh;
+}
+
+#text-and-from{
+	background-color: #b94a48;
+	height: 100vh;
+}
+
+#header-text{
+	font-size: 1.7rem;
+}
+
+#mom-dad{
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+#did-u-know div{
+	font-size: 1.1rem;
+	font-weight: 800;
+}
+
+#drum-school{
+	margin-top: 6px;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+#form-container{
+	text-align: center;
+	font-family: "Open Sans Hebrew";
+	margin: 10px 60px;
+	border-radius: 12px;
+}
+
+.white-header{
+	color: white;
+	font-family: "Open Sans Hebrew";
+}
+
+#icons{
+	margin-top: 15px;
+}
+
+#empty-bottom{
+	background-color: white;
+}
+
+.center-img{
+	margin: 0 auto;
+}
+
+.lpk-main-color{
+	color: #763d5d;
+}
+
+.lpk-main-bg-color{
+	background-color: #763d5d;
+}
+
+#icons img {
+	max-width: 36px;
+	margin: 0 auto;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+    width: 85%;
+    display: block;
+}
+
+#icons span{
+	font-size: 0.72rem;
+}
+
+.thin-margin{
+	padding-right: 5px;
+	padding-left: 5px;
+}

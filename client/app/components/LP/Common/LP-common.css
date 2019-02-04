@@ -1,0 +1,80 @@
+html{
+	font-size: 20px;
+}
+
+#submit{
+	background-color: #ffdd33;
+	font-size: 1rem;
+	font-weight: 600;
+	width: 100%;
+	margin: 24px 0px;
+	outline: none;
+	border-width: 1px;
+  height: 3rem;
+}
+
+#form-header{
+	font-size: 1.4rem;
+	line-height: 31px;
+	margin-top: 16px;
+}
+
+#form-container{
+	text-align: center;
+	font-family: "Open Sans Hebrew";
+	margin: 10px 60px;
+	border-radius: 12px;
+}
+
+#form-number{
+	font-size: 2.3rem;
+	font-weight: 800;
+}
+
+#form-details{
+	font-size: 1.3rem;
+	font-weight: 200;
+	direction: rtl;
+}
+
+.form-input-text-size{
+	font-size: 1rem;
+}
+
+#header-text,#form{
+	direction: rtl;
+	font-family: "Open Sans Hebrew";
+}
+
+@media(max-width: 1724px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media(max-width: 1382px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+@media(max-height: 824px){
+	html {
+		font-size: 12px;
+	}
+}
+
+@media(max-width: 1200px){
+	html {
+		font-size: 17px;
+	}
+	#form-container{
+		margin: 20px;
+	}
+}
+
+@media(max-width: 1024px) {
+	html {
+		font-size: 13px;
+	}
+}

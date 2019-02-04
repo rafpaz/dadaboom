@@ -1,0 +1,2 @@
+cd ~/dadaboom
+yarn build

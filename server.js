@@ -1,19 +1,20 @@
+/* eslint-disable no-console */
 const nodemon = require('nodemon');
 const path = require('path');
 
 nodemon({
   execMap: {
-    js: 'node'
+    js: 'node',
   },
   script: path.join(__dirname, 'server/server'),
   ignore: [],
   watch: process.env.NODE_ENV !== 'production' ? ['server/*'] : false,
-  ext: 'js'
+  ext: 'js',
 })
-.on('restart', function() {
-  console.log('Server restarted!');
-})
-.once('exit', function () {
-  console.log('Shutting down server');
-  process.exit();
-});
+  .on('restart', () => {
+    console.log('Server restarted!');
+  })
+  .once('exit', () => {
+    console.log('Shutting down server');
+    process.exit();
+  });

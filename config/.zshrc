@@ -60,6 +60,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  dirhistory
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -92,11 +93,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias start_server='cd ~/dadaboom; forever start -c "npm start" -l LogFile -a ./; tailf /root/.forever/LogFile;'
-alias stop_server='killall node'
-alias update_server="cd ~/dadaboom; stop_server; git pull; start_server"
+alias start_server='. ~/dadaboom/config/scripts/start_server.sh'
+alias stop_server='. ~/dadaboom/config/scripts/stop_server.sh'
+alias restart_server='. ~/dadaboom/config/scripts/restart_server.sh'
+alias update_server='. ~/dadaboom/config/scripts/update_server.sh'
+alias update_server_n='. ~/dadaboom/config/scripts/update_server_n.sh'
+alias build_start_server='. ~/dadaboom/config/scripts/build_start_server.sh'
+alias build_server='. ~/dadaboom/config/scripts/build_server.sh'
 
-
-export PORT=80
+export PORT=8080
 export NODE_ENV=production
 
+export VISUAL="vi"

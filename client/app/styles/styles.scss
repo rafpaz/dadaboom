@@ -1,3 +1,10 @@
-@charset "UTF-8";
-
-@import 'vendor/normalize';
+@import 'homepage/global';
+@import 'homepage/header';
+@import 'homepage/welcome';
+@import 'homepage/services';
+@import 'homepage/testimonials';
+@import 'homepage/about';
+@import 'homepage/portfolio';
+@import 'homepage/blog';
+@import 'homepage/contact';
+@import 'homepage/responsive';

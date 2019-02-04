@@ -1,9 +1,10 @@
+/* eslint-disable global-require */
 const fs = require('fs');
-const path = require('path');
 
 module.exports = (app) => {
   // API routes
-  fs.readdirSync(__dirname + '/api/').forEach((file) => {
+  fs.readdirSync(`${__dirname}/api/`).forEach((file) => {
+    // eslint-disable-next-line import/no-dynamic-require
     require(`./api/${file.substr(0, file.indexOf('.'))}`)(app);
   });
 };
