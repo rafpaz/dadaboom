@@ -19,13 +19,14 @@ const webpackConfig = require('../webpack.config');
 const isDev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 8080;
 
+const uri = 'mongodb://dadaboom:hxbiG9wa33sePFCw-P!kLp2q@cluster0.ahzoi.mongodb.net/dadaboomdb?retryWrites=true&w=majority';
 
 // Configuration
 // ================================================================================================
 
 // Set up Mongoose
-mongoose.connect(isDev ? process.env.DB_DEV : process.env.DB, { useNewUrlParser: true });
-mongoose.set('useCreateIndex', true);
+// mongoose.connect(isDev ? process.env.DB_DEV : process.env.DB, { useNewUrlParser: true });
+mongoose.connect(uri);
 mongoose.Promise = global.Promise;
 
 const app = express();
@@ -43,22 +44,26 @@ app.use(expressWinston.errorLogger(winston));
 if (isDev) {
   const compiler = webpack(webpackConfig);
 
-  app.use(historyApiFallback({
-    verbose: false,
-  }));
+  app.use(
+    historyApiFallback({
+      verbose: false,
+    }),
+  );
 
-  app.use(webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-    contentBase: path.resolve(__dirname, '../client/public'),
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false,
-    },
-  }));
+  app.use(
+    webpackDevMiddleware(compiler, {
+      publicPath: path.resolve(__dirname, '../client/public'),
+      // contentBase: path.resolve(__dirname, '../client/public'),
+      stats: {
+        colors: true,
+        hash: false,
+        timings: true,
+        chunks: false,
+        chunkModules: false,
+        modules: false,
+      },
+    }),
+  );
 
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static(path.resolve(__dirname, '../dist')));

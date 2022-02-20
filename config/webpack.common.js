@@ -7,7 +7,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const helpers = require('./helpers');
 
 const { NODE_ENV } = process.env;
-const isProd = NODE_ENV === 'production';
+// const isProd = NODE_ENV === 'production';
 
 module.exports = {
   entry: {
@@ -43,9 +43,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          !isProd ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
+          MiniCssExtractPlugin.loader, 'css-loader',
         ],
       },
     ],
@@ -69,16 +67,15 @@ module.exports = {
 
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash].css',
-      disable: !isProd,
     }),
 
     new CopyWebpackPlugin([{
-      from: helpers.root('client/public'),
+      patterns: [helpers.root('client/public')],
     }]),
     new ProgressBarPlugin({
       format: 'Build [:bar] :percent (:elapsed seconds)',
       clear: false,
     }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.IgnorePlugin({ resourceRegExp: /moment$|^\.\/locale$/ }),
   ],
 };

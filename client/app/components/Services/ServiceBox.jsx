@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Lightbox from 'react-images';
-import RemoveRedEye from '@material-ui/icons/RemoveRedEye';
+import RemoveRedEye from '@mui/icons-material/RemoveRedEye';
 import ReactTooltip from 'react-tooltip';
 import ReactGA from 'react-ga';
 

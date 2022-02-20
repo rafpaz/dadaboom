@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import TestimonialBox from './TestimonialBox';
 import data from './TestimonialData';
 
